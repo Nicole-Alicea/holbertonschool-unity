@@ -474,6 +474,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1221342647
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2021114679509438804, guid: 0f794895d389abe4e89a2dd3b3a9d7e9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 03aae1ab633385f4b8067497a29b5be4, type: 2}
+    - target: {fileID: 2988254230319455527, guid: 0f794895d389abe4e89a2dd3b3a9d7e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.6302605
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988254230319455527, guid: 0f794895d389abe4e89a2dd3b3a9d7e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988254230319455527, guid: 0f794895d389abe4e89a2dd3b3a9d7e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.682829
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988254230319455527, guid: 0f794895d389abe4e89a2dd3b3a9d7e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988254230319455527, guid: 0f794895d389abe4e89a2dd3b3a9d7e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988254230319455527, guid: 0f794895d389abe4e89a2dd3b3a9d7e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988254230319455527, guid: 0f794895d389abe4e89a2dd3b3a9d7e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988254230319455527, guid: 0f794895d389abe4e89a2dd3b3a9d7e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988254230319455527, guid: 0f794895d389abe4e89a2dd3b3a9d7e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988254230319455527, guid: 0f794895d389abe4e89a2dd3b3a9d7e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944324151489139436, guid: 0f794895d389abe4e89a2dd3b3a9d7e9, type: 3}
+      propertyPath: m_Name
+      value: Textured Ball
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f794895d389abe4e89a2dd3b3a9d7e9, type: 3}
 --- !u!1001 &1679577781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -742,3 +803,4 @@ SceneRoots:
   - {fileID: 1973476719}
   - {fileID: 1781517733}
   - {fileID: 1679577781}
+  - {fileID: 1221342647}

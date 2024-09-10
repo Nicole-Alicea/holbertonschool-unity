@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private int score = 0; // Stores the player's score
     public int health = 5; // Stores the player's health
     public TMP_Text scoreText;
+    public TMP_Text healthText;
     // private Transform lastTeleporter;
 
     // Update is called once per frame
@@ -46,8 +47,7 @@ public class PlayerController : MonoBehaviour
 
         else if (other.tag == "Trap")
         {
-            health--;
-            Debug.Log($"Health: {health}");
+            SetHealthText();
         }
 
         else if (other.tag == "Goal")
@@ -80,5 +80,11 @@ public class PlayerController : MonoBehaviour
     {
         score++;
         scoreText.text = $"Score: {score.ToString()}";
+    }
+
+    void SetHealthText()
+    {
+        health--;
+        healthText.text = $"Health: {health.ToString()}";
     }
 }

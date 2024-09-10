@@ -4,15 +4,17 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput; // Stores horizontal input values from the player(sphere)
     public float verticalInput; // Stores vertical input values from the player(sphere)
-    public float speed = 10f;
-    private int score = 0;
-    public int health = 5;
-    private Transform lastTeleporter;
+    public float speed = 10f; // Value to move player
+    private int score = 0; // Stores the player's score
+    public int health = 5; // Stores the player's health
+    public TMP_Text scoreText;
+    // private Transform lastTeleporter;
 
     // Update is called once per frame
     void Update()
@@ -38,8 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Pickup")
         {
-            score++;
-            Debug.Log($"Score: {score}");
+            SetScoreText();
             Destroy(other.gameObject);
         }
 
@@ -74,5 +75,10 @@ public class PlayerController : MonoBehaviour
         //         }
         //     }
         // }
+    }
+    void SetScoreText()
+    {
+        score++;
+        scoreText.text = $"Score: {score.ToString()}";
     }
 }

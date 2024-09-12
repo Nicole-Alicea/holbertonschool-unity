@@ -15,15 +15,19 @@ public class PlayerController : MonoBehaviour
     public int health = 5; // Stores the player's health
     public TMP_Text scoreText;
     public TMP_Text healthText;
-    // private Transform lastTeleporter;
+    public Text winLoseText;
+    public Image WinLoseBG;
 
     // Update is called once per frame
     void Update()
     {
         if (health == 0)
         {
-            Debug.Log("Game Over!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            winLoseText.text = "Game Over!";
+            winLoseText.color = Color.white;
+            WinLoseBG.color = Color.red;
+            WinLoseBG.gameObject.SetActive(true);
+            StartCoroutine(LoadScene(3f));
         }
     }
     void FixedUpdate()
@@ -52,29 +56,12 @@ public class PlayerController : MonoBehaviour
 
         else if (other.tag == "Goal")
         {
-            Debug.Log("You win!");
+            WinLoseBG.color = Color.green;
+            winLoseText.color = Color.black;
+            winLoseText.text = "You Win!";
+            WinLoseBG.gameObject.SetActive(true);
+            StartCoroutine(LoadScene(3f));
         }
-
-        // else if (other.tag == "Teleporter")
-        // {
-        //     // Find the other teleporter
-        //     GameObject[] teleporters = GameObject.FindGameObjectsWithTag("Teleporter");
-
-        //     foreach (GameObject teleporter in teleporters)
-        //     {
-        //         // Move the player to the other teleporter (even if it's the one they just came from)
-        //         if (teleporter.transform != other.transform || teleporter.transform == lastTeleporter)
-        //         {
-        //             // Teleport the player to the position of the other teleporter
-        //             transform.position = teleporter.transform.position;
-
-        //             // Update the last teleporter used to allow back-and-forth teleportation
-        //             lastTeleporter = teleporter.transform;
-
-        //             break;
-        //         }
-        //     }
-        // }
     }
     void SetScoreText()
     {
@@ -86,5 +73,11 @@ public class PlayerController : MonoBehaviour
     {
         health--;
         healthText.text = $"Health: {health.ToString()}";
+    }
+
+    IEnumerator LoadScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

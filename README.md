@@ -1,1 +1,1 @@
-This repository contains a clone of a maze project made in Unity with the purpose of practicing how to publish a game for windows, mac and linux. 
+All about Unity.

@@ -1,0 +1,1 @@
+This repository contains a clone of a maze project made in Unity with the purpose of practicing adding UI elements to it in said game engine. 

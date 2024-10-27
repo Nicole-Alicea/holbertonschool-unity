@@ -27,6 +27,9 @@ public class CameraController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+
+        // Load the saved invert Y-axis setting
+        isInverted = PlayerPrefs.GetInt("InvertY", 0) == 1;
     }
 
     private void LateUpdate()
@@ -48,5 +51,11 @@ public class CameraController : MonoBehaviour
         // Apply the calculated position and make the camera look at the player
         transform.position = newPosition;
         transform.LookAt(player.position + Vector3.up * offset.y);
+    }
+
+    // Method to set the Y-axis inversion from OptionsMenu
+    public void SetInvertY(bool invert)
+    {
+        isInverted = invert;
     }
 }

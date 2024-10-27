@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
 
     private Vector3 offset;  // Offset between the camera and the player
     private float yaw = 0f;  // Horizontal angle (left/right)
+    public bool isInverted = false;    // Invert Y-axis flag
 
     private void Start()
     {

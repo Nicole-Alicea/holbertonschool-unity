@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Vector3 startPosition; // Store the initial starting position
     private Transform cameraTransform; // Reference to the camera's transform
+    private Animator animator;             // Reference to the Animator component
 
 
     void Start()
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         startPosition = transform.position; // Capture the initial position of the player
         cameraTransform = Camera.main.transform; // Capture the main camera's transform
+        animator = GetComponent<Animator>();   // Get the Animator component attached to the player
     }
     // Update is called once per frame
     void Update()
@@ -74,10 +76,18 @@ public class PlayerController : MonoBehaviour
         // Move the player in the calculated direction
         if (direction.magnitude > 0.1f)
         {
+            // If there is movement input, set isMoving to true
+            animator.SetBool("isMoving", true);
+
             transform.Translate(direction * speed * Time.deltaTime, Space.World);
 
             // Rotate the player to face the direction they're moving
             transform.rotation = Quaternion.LookRotation(direction);
+        }
+        else
+        {
+            // If no input, set isMoving to false
+            animator.SetBool("isMoving", false);
         }
     }
 }

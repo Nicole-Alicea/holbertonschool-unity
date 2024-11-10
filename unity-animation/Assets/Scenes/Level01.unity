@@ -858,6 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1872406416}
+  cutsceneCamera: {fileID: 343774606}
   player: {fileID: 1979697647}
   timerCanvas: {fileID: 1260590721}
   cutsceneAnimator: {fileID: 343774607}

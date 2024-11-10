@@ -5,6 +5,7 @@ using UnityEngine;
 public class CutsceneController : MonoBehaviour
 {
     public GameObject mainCamera;               // Reference to the Main Camera
+    public GameObject cutsceneCamera;
     public GameObject player;               // Reference to the Player GameObject
     public GameObject timerCanvas;          // Reference to the Timer Canvas
     public Animator cutsceneAnimator;       // Animator component for cutscene animations
@@ -37,7 +38,7 @@ public class CutsceneController : MonoBehaviour
             timerCanvas.SetActive(true);
 
             // Disable CutsceneController
-            this.enabled = false;
+            cutsceneCamera.SetActive(false);
         }
     }
 }
